@@ -14,6 +14,9 @@ const inputEl = document.querySelector("#validation-input");
 const onCheckNumberSimbol = (event) => {
   const inputLength = event.currentTarget.value.length;
 
+  console.log(inputLength);
+  console.log(inputEl.dataset.length);
+
   const numberLength = Number(inputEl.dataset.length);
 
   if (inputLength === numberLength) {
