@@ -1,3 +1,15 @@
+// const enterEl = document.querySelector("#ingredients");
+
+// const elementsIngredients = ingredients.map((ingradient) => {
+//   const itemEl = document.createElement("li");
+//   itemEl.textContent = ingradient;
+//   itemEl.classList.add("item");
+
+//   return itemEl;
+// });
+
+// enterEl.append(...elementsIngredients);
+
 // Напиши скрипт, який для кожного елемента масиву ingredients:
 
 // Створить окремий елемент <li>. Обов'язково використовуй метод
@@ -14,14 +26,25 @@ const ingredients = [
   "Condiments",
 ];
 
-const enterEl = document.querySelector("#ingredients");
+const listEl = document.querySelector("#ingredients");
 
-const elementsIngredients = ingredients.map((ingradient) => {
-  const itemEl = document.createElement("li");
-  itemEl.textContent = ingradient;
-  itemEl.classList.add("item");
+// const createIngredients = ingredients.map((element) => {
+//   const addElement = document.createElement("li");
+//   console.log(addElement);
+//   addElement.textContent = element;
+//   return addElement;
+// });
 
-  return itemEl;
-});
+// console.log(createIngredients);
 
-enterEl.append(...elementsIngredients);
+// listEl.append(...createIngredients);
+
+const addItem = ingredients
+  .map((element) => {
+    const creatingItem = `<li>${element}</li>`;
+    console.log(creatingItem);
+    return creatingItem;
+  })
+  .join("");
+
+listEl.insertAdjacentHTML("afterbegin", addItem);

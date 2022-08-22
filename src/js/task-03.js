@@ -1,3 +1,13 @@
+// const imageGallary = document.querySelector(".gallery");
+
+// const elementsImageGallary = (imagesGallary) =>
+//   images
+//     .map(({ url, alt }) => `<li><img src=${url} alt=${alt} width=450></li>`)
+//     .join("");
+
+// console.log(elementsImageGallary(images));
+// imageGallary.insertAdjacentHTML("afterbegin", elementsImageGallary(images));
+
 // Використовуй масив об'єктів images для створення елементів <img>,
 //  вкладених в < li >.
 //  Для створення розмітки використовуй шаблонні рядки
@@ -21,12 +31,16 @@ const images = [
   },
 ];
 
-const imageGallary = document.querySelector(".gallery");
+const listEl = document.querySelector(".gallery");
 
-const elementsImageGallary = (imagesGallary) =>
-  images
-    .map(({ url, alt }) => `<li><img src=${url} alt=${alt} width=450></li>`)
-    .join("");
+console.log(listEl);
 
-console.log(elementsImageGallary(images));
-imageGallary.insertAdjacentHTML("afterbegin", elementsImageGallary(images));
+const addImage = images
+  .map((element) => {
+    return `<li><img alt=${element.alt} src=${element.url} width=450></li>`;
+  })
+  .join("");
+
+console.log(addImage);
+
+listEl.insertAdjacentHTML("afterbegin", addImage);
