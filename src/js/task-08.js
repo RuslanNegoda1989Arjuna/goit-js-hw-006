@@ -25,8 +25,11 @@ function onSubmite(event) {
   if (email.value === "" || password.value === "") {
     return alert("Заповніть всі поля будь ласка");
   }
-
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
+  const loginObj = {
+    Email: email.value,
+    password: password.value,
+  };
+  console.log(loginObj);
 
   event.currentTarget.reset();
 }
