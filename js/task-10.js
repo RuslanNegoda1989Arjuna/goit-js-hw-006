@@ -38,14 +38,16 @@ function createBoxes(amount) {
     box.style.backgroundColor = getRandomHexColor();
     box.style.width = `${30 + 10 * i}px`;
     box.style.height = `${30 + 10 * i}px`;
+    box.style.margin = "5px";
 
     boxs.push(box);
   }
   console.log(boxs);
   refs.boxes.append(...boxs);
+  refs.input.value = "";
 }
 
 function destroyBoxes() {
   refs.boxes.innerHTML = "";
-  refs.input.value = 0;
+  refs.input.value = "";
 }

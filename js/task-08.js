@@ -1,3 +1,27 @@
+// const formEl = document.querySelector(".login-form");
+// console.log(formEl);
+
+// formEl.addEventListener("submit", onSubmite);
+
+// function onSubmite(event) {
+//   event.preventDefault();
+
+//   const {
+//     elements: { email, password },
+//   } = event.currentTarget;
+
+//   if (email.value === "" || password.value === "") {
+//     return alert("Заповніть всі поля будь ласка");
+//   }
+//   const loginObj = {
+//     Email: email.value,
+//     password: password.value,
+//   };
+//   console.log(loginObj);
+
+//   event.currentTarget.reset();
+// }
+
 // Обробка відправлення форми form.login - form повинна відбуватися відповідно до події submit.
 
 // Під час відправлення форми сторінка не повинна перезавантажуватися.
@@ -10,26 +34,29 @@
 
 // Виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
-const formEl = document.querySelector(".login-form");
-console.log(formEl);
+const refs = {
+  form: document.querySelector(".login-form"),
+  button: document.querySelector(".button"),
+};
+// console.log(refs.form.elements);
+refs.form.addEventListener("submit", onFullField);
 
-formEl.addEventListener("submit", onSubmite);
-
-function onSubmite(event) {
+function onFullField(event) {
   event.preventDefault();
+
+  console.log(event.currentTarget.elements);
 
   const {
     elements: { email, password },
   } = event.currentTarget;
 
   if (email.value === "" || password.value === "") {
-    return alert("Заповніть всі поля будь ласка");
+    alert("Enter all the fields");
   }
-  const loginObj = {
-    Email: email.value,
-    password: password.value,
-  };
-  console.log(loginObj);
 
-  event.currentTarget.reset();
+  const objLoginForm = {
+    Email: email.value,
+    Password: password.value,
+  };
+  console.log(objLoginForm);
 }
